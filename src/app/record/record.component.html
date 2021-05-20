@@ -1,0 +1,123 @@
+<app-spiner></app-spiner>
+<div class="site-wrapper">
+    <div class="container">
+        <h1>Registro</h1>
+    </div>
+    <form [formGroup]="recordForm" (ngSubmit)="guardar()">
+        <div class="container">
+            <div class="item  item-1">
+                <label for="nombre">Nombre</label>
+                <input name="nombre" formControlName="nombre" id="Fnombre" type="text" placeholder="Ingrese Nombre"
+                    [class.is-invalid]="submit && genericControl.nombre.errors">
+                <div *ngIf="submit && genericControl.nombre.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.nombre.errors?.required">Nombre es requerido</div>
+                    <div *ngIf="genericControl.nombre.errors?.maxlength">Máximo 30 digitos</div>
+                </div>
+            </div>
+            <div class="item  item-2">
+                <label for="apellido">Apelllidos</label>
+                <input name="apellido" formControlName="apellido" id="Lapellido" type="text"
+                    placeholder="Ingrese Apellido" [class.is-invalid]="submit && genericControl.apellido.errors">
+                <div *ngIf="submit && genericControl.apellido.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.apellido.errors?.required">Apellido es requerido</div>
+                    <div *ngIf="genericControl.apellido.errors?.maxlength">Máximo 30 digitos</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="item  item-1">
+                <label for="pais">Pais</label>
+                <select id="pais" name="pais" formControlName="pais" (change)="obtenerDepartamentos($event)"
+                    [class.is-invalid]="submit && genericControl.pais.errors">
+                    <option value="" disabled>Seleccione</option>
+                    <option value={{item.idPadre}} *ngFor="let item of this.listPaises">{{item.nombrePais}}</option>
+                </select>
+                <div *ngIf="submit && genericControl.pais.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.pais.errors?.required">Pais es requerido</div>
+                </div>
+            </div>
+            <div class="item  item-2">
+                <label for="departamento">Departamento</label>
+                <select id="departamento" name="departamento" formControlName="departamento"
+                    [class.is-invalid]="submit && genericControl.departamento.errors">
+                    <option value="" disabled>Seleccione</option>
+                    <option value={{item.idPadre}} *ngFor="let item of this.listDepartamentos">
+                        {{item.nombreDepartamento}}</option>
+                </select>
+                <div *ngIf="submit && genericControl.departamento.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.departamento.errors?.required">Departamento es requerido</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item  item-1">
+                <label for="email">Email</label>
+                <input name="email" formControlName="email" id="email" type="email" placeholder="Ingrese Email"
+                    [class.is-invalid]="submit && genericControl.email.errors">
+                <div *ngIf="submit && genericControl.email.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.email.errors?.required">Email es requerido</div>
+                    <div *ngIf="genericControl.email.errors?.email">Email no es valido</div>
+                </div>
+            </div>
+            <div class="item  item-2">
+                <label for="telefono">Telefono</label>
+                <input name="telefono" formControlName="telefono" id="telefono" type="text"
+                    placeholder="Ingrese Telefono" [class.is-invalid]="submit && genericControl.telefono.errors">
+                <div *ngIf="submit && genericControl.telefono.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.telefono.errors?.required">Telefono es requerido</div>
+                    <div *ngIf="genericControl.telefono.errors?.pattern">Campo numérico</div>
+                    <div *ngIf="genericControl.telefono.errors?.maxlength">Máximo 10 dígitos</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item  item-1">
+                <label for="contrasenia">Contraseña</label>
+                <input name="contrasenia" formControlName="contrasenia" id="contrasenia" type="text"
+                    placeholder="Ingrese Contraseña" (change)="validarContrasenia($event)"
+                    [class.is-invalid]="submit && genericControl.contrasenia.errors">
+                <div *ngIf="submit && genericControl.contrasenia.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.contrasenia.errors?.required">Contraseña es requerido</div>
+                    <div *ngIf="genericControl.contrasenia.errors?.pattern">Campo alfanumérico</div>
+                    <div *ngIf="genericControl.contrasenia.errors?.minlength">Mínimo 6 dígitos</div>
+                </div>
+            </div>
+            <div class="item  item-2">
+                <label for="dobleContrasenia">Repita la contraseña</label>
+                <input name="dobleContrasenia" formControlName="dobleContrasenia" id="dobleContrasenia" type="text"
+                    placeholder="Ingrese Contraseña" (change)="validarContrasenia($event)"
+                    [class.is-invalid]="submit && genericControl.dobleContrasenia.errors">
+                <div *ngIf="submit && genericControl.dobleContrasenia.errors" class="invalid-feedback">
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.required">Contraseña es requerido</div>
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.pattern">Campo alfanumérico</div>
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.minlength">Mínimo 6 dígitos</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item  item-1">
+                <label class="container">
+                    <a [href]="this.ulrTerminos" target="_blank">
+                        <strong>Acepto Términos y Condiciones</strong>
+                    </a>
+                    <input type="checkbox" name="terminos" formControlName="terminos"
+                        [class.is-invalid]="submit && genericControl.terminos.errors">
+                        <div *ngIf="submit && genericControl.terminos.errors" class="invalid-feedback">
+                            <div *ngIf="genericControl.terminos.errors?.required">Térmnos y condiciones es requerido</div>
+                        </div>
+                </label>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="item  item-button-2">
+                <button class="button-cancel button-cancel"><strong>Cancelar</strong></button>
+            </div>
+            <div class="item  item-button-1">
+                <button class="button-save" type="submit"><strong>Guardar</strong>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

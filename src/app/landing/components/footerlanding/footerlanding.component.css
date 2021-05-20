@@ -1,0 +1,37 @@
+.container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('/assets/assets/Backgrounds/Bg_Footer.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .item {
+    border-radius: .2em;
+    font-family: sans-serif;
+    padding: 2em 1em;
+    color: white;
+  }
+  .item-1 {
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+    flex-shrink: 3;
+    flex-grow: 5;
+}
+.color-woloxers {
+    color: #2E9AFE;
+  }
+  .button {
+    background-color: #2E9AFE; 
+    color: white; 
+    border-radius: 15px 15px 15px ;
+    border: 1px solid #2E9AFE;
+    width: 100px;
+    height: 35px;
+    margin-left: 0px;
+  }
+  .margin{
+      margin-top: 50px;
+  }

@@ -1,0 +1,126 @@
+{
+    "Paises": [
+        {
+            "nombrePais": "Colombia",
+            "idPadre": 57
+        },
+        {
+            "nombrePais": "Argentina",
+            "idPadre": 54
+        },
+        {
+            "nombrePais": "Chile",
+            "idPadre": 56
+        },
+        {
+            "nombrePais": "Peru",
+            "idPadre": 51
+        },
+        {
+            "nombrePais": "Uruguay",
+            "idPadre": 595
+        }
+    ],
+    "Dapartamentos": [
+        {
+            "nombreDepartamento": "Antioquia",
+            "idPadre": 57
+        },
+        {
+            "nombreDepartamento": "Tolima",
+            "idPadre": 57
+        },
+        {
+            "nombreDepartamento": "Huila",
+            "idPadre": 57
+        },
+        {
+            "nombreDepartamento": "Cundinamarca",
+            "idPadre": 57
+        },
+        {
+            "nombreDepartamento": "Bolivar",
+            "idPadre": 57
+        },
+        {
+            "nombreDepartamento": "Buenos Aires",
+            "idPadre": 54
+        },
+        {
+            "nombreDepartamento": "Catamarca",
+            "idPadre": 54
+        },
+        {
+            "nombreDepartamento": "Mendoza",
+            "idPadre": 54
+        },
+        {
+            "nombreDepartamento": "San Juan",
+            "idPadre": 54
+        },
+        {
+            "nombreDepartamento": "Santa Fe",
+            "idPadre": 54
+        },
+        {
+            "nombreDepartamento": "Itata",
+            "idPadre": 56
+        },
+        {
+            "nombreDepartamento": "Cuyo",
+            "idPadre": 56
+        },
+        {
+            "nombreDepartamento": "Concepción",
+            "idPadre": 56
+        },
+        {
+            "nombreDepartamento": "Valdivia",
+            "idPadre": 56
+        },
+        {
+            "nombreDepartamento": "Pachucay",
+            "idPadre": 56
+        },
+        {
+            "nombreDepartamento": "Amazonas",
+            "idPadre": 51
+        },
+        {
+            "nombreDepartamento": "Ayacucho",
+            "idPadre": 51
+        },
+        {
+            "nombreDepartamento": "Cajamarca",
+            "idPadre": 51
+        },
+        {
+            "nombreDepartamento": "Cusco",
+            "idPadre": 51
+        },
+        {
+            "nombreDepartamento": "Lima",
+            "idPadre": 51
+        },
+        {
+            "nombreDepartamento": "Montevideo",
+            "idPadre": 595
+        },
+        {
+            "nombreDepartamento": "Trinidad",
+            "idPadre": 595
+        },
+        {
+            "nombreDepartamento": "Rivera",
+            "idPadre": 595
+        },
+        {
+            "nombreDepartamento": "Rocha",
+            "idPadre": 595
+        },
+        {
+            "nombreDepartamento": "Mercedes",
+            "idPadre": 595
+        }
+    ]
+}

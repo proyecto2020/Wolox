@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('/assets/assets/Backgrounds/Bg_Header.png');
+    background-repeat: no-repeat;
+}
+.invalid-feedback {
+    color: #dc3545;
+  }
+  .is-invalid {
+    border: 1px solid #dc3545 !important;
+  }

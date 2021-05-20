@@ -1,0 +1,108 @@
+.site-wrapper {
+    border-top: 4px solid #ff0037;
+}
+.container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .item {
+    border-radius: .2em;
+    font-family: sans-serif;
+    padding: 2em 1em;
+    color: white;
+    align-self: center;
+    height: 20px;
+  }
+  .item-1 {
+    color: black;
+    font-family: sans-serif;
+    flex-grow: 4;
+}
+.item-2 {
+    color: black;
+    font-family: sans-serif;
+    flex-grow: 4;
+}
+  input[type=text],[type=email], select {
+    min-width: 90%;
+    padding: 10px 10px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  a:link, a:visited, a:active {
+    text-decoration:none;
+    color: black;
+}
+.item-button-1 {
+    color: black;
+    font-family: sans-serif;
+}
+.button-cancel {
+    background-color: transparent; 
+    color: black; 
+    border-radius: 10px 10px 10px ;
+    border: 1px solid gray;
+    width: 100px;
+    height: 35px;
+  }
+  .button-save {
+    background-color: transparent; 
+    color: #8DB600; 
+    border-radius: 10px 10px 10px ;
+    border: 1px solid #8DB600;
+    width: 100px;
+    height: 35px;
+  }
+  .button-save:hover {
+    background-color: #8DB600;
+    color: white;
+  }
+  .button-cancel:hover {
+    background-color: gray;
+    color: white;
+  }
+
+
+h1 {
+  font-size: 50pt;
+  font-family: 'Luckiest Guy';
+  text-align: center;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow:   0px -6px 0 #212121,  
+                 0px -6px 0 #212121,
+                 0px  6px 0 #212121,
+                 0px  6px 0 #212121,
+                -6px  0px 0 #212121,  
+                 6px  0px 0 #212121,
+                -6px  0px 0 #212121,
+                 6px  0px 0 #212121,
+                -6px -6px 0 #212121,  
+                 6px -6px 0 #212121,
+                -6px  6px 0 #212121,
+                 6px  6px 0 #212121,
+                -6px  18px 0 #212121,
+                 0px  18px 0 #212121,
+                 6px  18px 0 #212121,
+                 0 19px 1px rgba(0,0,0,.1),
+                 0 0 6px rgba(0,0,0,.1),
+                 0 6px 3px rgba(0,0,0,.3),
+                 0 12px 6px rgba(0,0,0,.2),
+                 0 18px 18px rgba(0,0,0,.25),
+                 0 24px 24px rgba(0,0,0,.2),
+                 0 36px 36px rgba(0,0,0,.15);
+}
+.container-button {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

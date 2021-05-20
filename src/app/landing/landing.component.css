@@ -1,0 +1,31 @@
+.container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .item {
+    border-radius: .2em;
+    font-family: sans-serif;
+    padding: 2em 1em;
+    color: white;
+  }
+  .item-1 {
+    color: black;
+    font-family: sans-serif;
+    text-align: left;
+    margin-left: 65px;
+    flex-shrink: 3;
+    flex-grow: 5;
+}
+.item-2 {
+    background-image: url('/assets/assets/Img Hero/Ic_ilustra_Hero.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    flex-grow: 4;
+    height: 250px;
+  }
+  .wolox-color {
+    color: #8DB600;
+  }
+  

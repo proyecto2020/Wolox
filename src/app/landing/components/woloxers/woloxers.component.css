@@ -1,0 +1,96 @@
+.container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    border-radius: .2em;
+    font-family: sans-serif;
+    padding: 2em 1em;
+    color: white;
+    background: rgb(243, 243, 241);
+  }
+  .item-1 {
+    background-image: url('/assets/assets/img_woloxer.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    flex-grow: 4;
+    margin-top: 20px;
+}
+.item-2 {
+  color: black;
+  font-family: sans-serif;
+  text-align: center;
+  flex-shrink: 3;
+  flex-grow: 5;
+  margin-top: 20px;
+}
+.button {
+  background-color: transparent; 
+  color: white; 
+  border-radius: 10px 10px 10px ;
+  border: 1px solid #2E9AFE;
+  width: 100px;
+  height: 35px;
+  margin-left: 300px;
+}
+.fa-twitter {
+  margin-left: 310px;
+}
+@media (min-width: 300px) {
+  .container {
+    flex-direction: row;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  .button {
+    background-color: transparent; 
+    color: white; 
+    border-radius: 10px 10px 10px ;
+    border: 1px solid #2E9AFE;
+    width: 100px;
+    height: 35px;
+    margin-left: 100px;
+  }
+  .fa-twitter {
+    margin-left: 100px;
+  }
+}
+@media (min-width: 800px) {
+  .button {
+    background-color: transparent; 
+    color: white; 
+    border-radius: 10px 10px 10px ;
+    border: 1px solid #2E9AFE;
+    width: 100px;
+    height: 35px;
+    margin-left: 300px;
+  }
+  .fa-twitter {
+    margin-left: 310px;
+  }
+}
+.container-text{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item-text {
+  color: black;
+  font-family: sans-serif;
+  text-align: center;
+  flex-shrink: 3;
+  flex-grow: 5;
+}
+.color-350 {
+  color: #8DB600;
+}
+.color-woloxers {
+  color: #2E9AFE;
+}
+.fa-color {
+  color: #2E9AFE;
+}
