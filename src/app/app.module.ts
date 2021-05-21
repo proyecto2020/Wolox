@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinerComponent } from './shared/components/spiner/spiner.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PersistenceModule } from 'angular-persistence';
 @NgModule({
   declarations: [AppComponent, RecordComponent, SpinerComponent],
   imports: [
@@ -29,6 +30,7 @@ import { RouterModule } from '@angular/router';
     LandingModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
+    PersistenceModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

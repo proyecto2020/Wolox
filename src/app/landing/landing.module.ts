@@ -13,13 +13,15 @@ import { BenefitsComponent } from './components/benefits/benefits.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterlandingComponent } from './components/footerlanding/footerlanding.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TranslateComponent } from './components/translate/translate.component';
 @NgModule({
   declarations: [
     HeaderComponent,
     LandingComponent,
     WoloxersComponent,
     BenefitsComponent,
-    FooterlandingComponent
+    FooterlandingComponent,
+    TranslateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { PersistenceInfoService } from '../utilities/persistence/persistence-info.service';
 
 @Component({
   selector: 'app-landing',
@@ -8,10 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LandingComponent implements OnInit {
   isLogged: boolean;
-  constructor(private readonly translate: TranslateService) { }
+  constructor(private persistence: PersistenceInfoService) { }
 
   ngOnInit(): void {
-    this.isLogged = (sessionStorage.getItem('record')) ? true : false;
+    this.isLogged = (this.persistence.existInfo('record')) ? true : false;
   }
 
 }

@@ -30,7 +30,7 @@
                 <label for="pais">Pais</label>
                 <select id="pais" name="pais" formControlName="pais" (change)="obtenerDepartamentos($event)"
                     [class.is-invalid]="submit && genericControl.pais.errors">
-                    <option value="" disabled>Seleccione</option>
+                    <option value="" disabled selected>Seleccione</option>
                     <option value={{item.idPadre}} *ngFor="let item of this.listPaises">{{item.nombrePais}}</option>
                 </select>
                 <div *ngIf="submit && genericControl.pais.errors" class="invalid-feedback">
@@ -41,7 +41,7 @@
                 <label for="departamento">Departamento</label>
                 <select id="departamento" name="departamento" formControlName="departamento"
                     [class.is-invalid]="submit && genericControl.departamento.errors">
-                    <option value="" disabled>Seleccione</option>
+                    <option value="" disabled selected>Seleccione</option>
                     <option value={{item.idPadre}} *ngFor="let item of this.listDepartamentos">
                         {{item.nombreDepartamento}}</option>
                 </select>
@@ -101,11 +101,7 @@
                     <a [href]="this.ulrTerminos" target="_blank">
                         <strong>Acepto Términos y Condiciones</strong>
                     </a>
-                    <input type="checkbox" name="terminos" formControlName="terminos"
-                        [class.is-invalid]="submit && genericControl.terminos.errors">
-                        <div *ngIf="submit && genericControl.terminos.errors" class="invalid-feedback">
-                            <div *ngIf="genericControl.terminos.errors?.required">Térmnos y condiciones es requerido</div>
-                        </div>
+                    <input type="checkbox" name="terminos" formControlName="terminos">
                 </label>
 
             </div>

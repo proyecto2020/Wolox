@@ -5,6 +5,7 @@ import { GeneralService } from '../app-core/core/services/general.service';
 import { GenericMessage } from '../app-core/genericmessage';
 import { DefaultConfig } from '../utilities/defaultconfig';
 import { ObjectRecord } from './entities/record.object';
+import { PersistenceInfoService } from '../utilities/persistence/persistence-info.service';
 
 @Component({
   selector: 'app-record',
@@ -22,7 +23,8 @@ export class RecordComponent implements OnInit {
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly generalService: GeneralService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private persistence: PersistenceInfoService
   ) {
     this.genericMessage = new GenericMessage();
     this.submit = false;
@@ -144,11 +146,22 @@ export class RecordComponent implements OnInit {
         if (rs) {
           setTimeout(() => {
             this.spinner.hide();
-            this.showMessage();
+            this.almacenarInformacion(item);
           }, 5000);
         }
       });
     }
+  }
+
+  /**
+   *almacena la informacion incriptada en el sesion storage.
+   *
+   * @param {*} item
+   * @memberof RecordComponent
+   */
+  almacenarInformacion(item) {
+    this.persistence.setInfo('record', JSON.stringify(item));
+    this.showMessage();
   }
 
   /**

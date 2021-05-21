@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { PersistenceInfoService } from 'src/app/utilities/persistence/persistence-info.service';
 import { IAuthAccessService } from './oauth.access.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OAuthAccessService implements IAuthAccessService {
-  constructor() {}
+  constructor(private persistence: PersistenceInfoService) {}
 
   /**
    * Obtener el Token oAuth de ADFS
@@ -18,7 +19,7 @@ export class OAuthAccessService implements IAuthAccessService {
    * Obtener el Nombre del Usuario Autenticado
    */
   public getUser(): string {
-    let info = sessionStorage.getItem('record');
+    let info = JSON.parse(this.persistence.getInfo('record'));
     return info;
   }
 
@@ -39,10 +40,10 @@ export class OAuthAccessService implements IAuthAccessService {
   /**
    * Cierra la session activa de ADFS
    */
-  public logOut(): void { }
+  public logOut(): void {}
 
   /**
    * Inicializa el Componente de oauth2-oidc para la autenticacion con ADFS
    */
-  public initializeOAuthService(): void { }
+  public initializeOAuthService(): void {}
 }

@@ -17,24 +17,12 @@ export class HeaderComponent implements OnInit {
   @Input() set isLogged(value: boolean) {
     this._isLogged = value;
   }
-  constructor(
-    private readonly translate: TranslateService,
-    private readonly router: Router
-  ) {
+  constructor(private readonly router: Router) {
     this.informacionUsuario = new Record();
   }
 
   ngOnInit(): void {}
-  changeLanguage(language: string): void {
-    this.translate.use(language);
-  }
   navigateToRecord(): void {
-    let datos = new Object();
-    datos = {
-      email: this.informacionUsuario.email,
-      password: this.informacionUsuario.password,
-    };
-    sessionStorage.setItem('record', datos as string);
     this.router.navigate(['/record']);
   }
 }
