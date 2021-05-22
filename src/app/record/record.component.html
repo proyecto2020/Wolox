@@ -31,11 +31,10 @@
         <div class="container">
             <div class="item  item-1">
                 <label for="pais">{{'label.generics.pais' | translate}}</label>
-                <select id="pais" name="pais" formControlName="pais" (change)="obtenerDepartamentos($event)"
-                    [class.is-invalid]="submit && genericControl.pais.errors">
-                    <option value="" disabled selected>{{'label.generics.seleccione' | translate}}</option>
-                    <option value={{item.idPadre}} *ngFor="let item of this.listPaises">{{item.nombrePais}}</option>
-                </select>
+                <ng-select id="pais" name="pais" formControlName="pais" (change)="obtenerDepartamentos($event)"
+                    [items]="listPaises" [loading]="listPaises == undefined" bindValue="idPadre" bindLabel="nombrePais"
+                    [class.is-invalid]="submit && genericControl.pais.errors" [placeholder]="'Seleccione país'">
+                </ng-select>
                 <div *ngIf="submit && genericControl.pais.errors" class="invalid-feedback">
                     <div *ngIf="genericControl.pais.errors?.required">{{'label.generics.camposRequerido' | translate}}
                     </div>
@@ -43,12 +42,11 @@
             </div>
             <div class="item  item-2">
                 <label for="departamento">{{'label.generics.departamento' | translate}}</label>
-                <select id="departamento" name="departamento" formControlName="departamento"
-                    [class.is-invalid]="submit && genericControl.departamento.errors">
-                    <option value="" disabled selected>{{'label.generics.seleccione' | translate}}</option>
-                    <option value={{item.idPadre}} *ngFor="let item of this.listDepartamentos">
-                        {{item.nombreDepartamento}}</option>
-                </select>
+                <ng-select id="departamento" name="departamento" formControlName="departamento"
+                    [items]="listDepartamentos" [loading]="listDepartamentos == undefined" bindValue="idPadre"
+                    bindLabel="nombreDepartamento" [placeholder]="'Seleccione departamento'"
+                    [ngClass]="{'is-invalid': submit && genericControl.departamento.errors}">
+                </ng-select>
                 <div *ngIf="submit && genericControl.departamento.errors" class="invalid-feedback">
                     <div *ngIf="genericControl.departamento.errors?.required">{{'label.generics.camposRequerido' |
                         translate}}</div>
@@ -122,10 +120,11 @@
             </div>
         </div>
         <div class="container">
-            <div class="item  item-button-2">
-                <button class="button-cancel button-cancel"><strong>{{'label.generics.cancelar' | translate}}</strong></button>
+            <div class="item-button-2">
+                <button class="button-cancel button-cancel"><strong>{{'label.generics.cancelar' |
+                        translate}}</strong></button>
             </div>
-            <div class="item  item-button-1">
+            <div class="item-button-1">
                 <button class="button-save" type="submit"><strong>{{'label.generics.guardar' | translate}}</strong>
                 </button>
             </div>

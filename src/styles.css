@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @font-face{
   font-family: fira;
   src: url('./assets/fonts/Nunito-Regular.ttf');
@@ -9,8 +10,16 @@ body {
     font-family: fira, 'Arial Narrow', Arial, sans-serif !important;
 }
 .invalid-feedback {
-    color: #dc3545;
+  color: #dc3545;
   }
   .is-invalid {
     border: 1px solid #dc3545 !important;
+  }
+  .ng-select .ng-select-container {
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;;
   }

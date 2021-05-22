@@ -31,6 +31,7 @@ export class RecordComponent implements OnInit {
     this.genericMessage = new GenericMessage();
     this.submit = false;
     this.ulrTerminos = DefaultConfig.DEFAULT_CONFIG_APP.DefaultUrlTerminos;
+    this.listDepartamentos = [];
   }
 
   ngOnInit(): void {
@@ -58,7 +59,7 @@ export class RecordComponent implements OnInit {
    */
   obtenerDepartamentos(event) {
     this.listDepartamentos = this.listGeneralInformacion.Dapartamentos.filter(
-      (x) => x.idPadre === Number(event.target.value)
+      (x) => x.idPadre === Number(event.idPadre)
     );
   }
 

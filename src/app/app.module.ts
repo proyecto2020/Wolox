@@ -7,7 +7,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LandingModule } from './landing/landing.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import { RecordComponent } from './record/record.component';
 import { AuthGuardService } from './app-core/core/guards/auth-guard.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -19,8 +23,16 @@ import { PersistenceModule } from 'angular-persistence';
 import { ListsComponent } from './lists/lists.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { NgSelectConfig, NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
-  declarations: [AppComponent, RecordComponent, SpinerComponent, ListsComponent, NavbarComponent, FilterPipe],
+  declarations: [
+    AppComponent,
+    RecordComponent,
+    SpinerComponent,
+    ListsComponent,
+    NavbarComponent,
+    FilterPipe,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -34,6 +46,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     NgxSpinnerModule,
     BrowserAnimationsModule,
     PersistenceModule,
+    NgSelectModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -42,10 +55,16 @@ import { FilterPipe } from './pipes/filter.pipe';
       },
     }),
   ],
+  exports: [NgSelectModule],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(
+    private config: NgSelectConfig,
+    readonly translate: TranslateService
+  ) {}
+}
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

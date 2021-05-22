@@ -10,24 +10,22 @@
   }
   .item {
     border-radius: .2em;
-    
     padding: 2em 1em;
     color: white;
     align-self: center;
     height: 20px;
+    width: 50px;
   }
   .item-1 {
     color: black;
-    
     flex-grow: 4;
 }
 .item-2 {
     color: black;
-    
     flex-grow: 4;
 }
-  input[type=text],[type=email], select {
-    min-width: 100%;
+  input[type=text],[type=email] {
+    width: 100%;
     padding: 10px 10px;
     display: flex;
     border: 1px solid #ccc;
@@ -105,4 +103,5 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
