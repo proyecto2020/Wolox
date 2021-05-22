@@ -1,7 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { Record } from './entities/record.object';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +7,6 @@ import { Record } from './entities/record.object';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  informacionUsuario: Record;
   _isLogged: boolean;
   get isLogged(): boolean {
     return this._isLogged;
@@ -17,9 +14,7 @@ export class HeaderComponent implements OnInit {
   @Input() set isLogged(value: boolean) {
     this._isLogged = value;
   }
-  constructor(private readonly router: Router) {
-    this.informacionUsuario = new Record();
-  }
+  constructor(private readonly router: Router) {}
 
   ngOnInit(): void {}
   navigateToRecord(): void {
