@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: fira;
+  src: url('./assets/fonts/Nunito-Regular.ttf');
+}
 body {
     background-image: url('/assets/assets/Backgrounds/Bg_Header.png');
     background-repeat: no-repeat;
+    font-family: fira, 'Arial Narrow', Arial, sans-serif !important;
 }
 .invalid-feedback {
     color: #dc3545;

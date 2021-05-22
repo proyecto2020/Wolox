@@ -16,8 +16,11 @@ import { SpinerComponent } from './shared/components/spiner/spiner.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PersistenceModule } from 'angular-persistence';
+import { ListsComponent } from './lists/lists.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
-  declarations: [AppComponent, RecordComponent, SpinerComponent],
+  declarations: [AppComponent, RecordComponent, SpinerComponent, ListsComponent, NavbarComponent, FilterPipe],
   imports: [
     CommonModule,
     FormsModule,

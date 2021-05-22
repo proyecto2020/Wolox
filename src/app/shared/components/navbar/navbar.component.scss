@@ -1,0 +1,47 @@
+
+  .container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   .item {
+    border-radius: .2em;
+    color: white;
+    
+}
+.item-1 {
+    color: black;
+    flex-grow: 4;
+}
+  nav {
+    display: inline-block;
+    border: 2px solid gray;
+    border-radius: 30px;
+    animation: slide-in 1s ease-out;
+  }
+  ul {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0 30px;
+    list-style-type: none;
+    li:not(:last-child) {
+      margin-right: 40px;
+    }
+    li {
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.2s;
+      a {
+        color: #2E9AFE;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+    }
+  }
+  
+  

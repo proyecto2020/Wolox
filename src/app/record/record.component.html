@@ -1,97 +1,112 @@
 <app-spiner></app-spiner>
 <div class="site-wrapper">
     <div class="container">
-        <h1>Registro</h1>
+        <h1>{{'label.generics.registro' | translate}}</h1>
     </div>
     <form [formGroup]="recordForm" (ngSubmit)="guardar()">
         <div class="container">
             <div class="item  item-1">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">{{'label.generics.nombre' | translate}}</label>
                 <input name="nombre" formControlName="nombre" id="Fnombre" type="text" placeholder="Ingrese Nombre"
                     [class.is-invalid]="submit && genericControl.nombre.errors">
                 <div *ngIf="submit && genericControl.nombre.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.nombre.errors?.required">Nombre es requerido</div>
-                    <div *ngIf="genericControl.nombre.errors?.maxlength">Máximo 30 digitos</div>
+                    <div *ngIf="genericControl.nombre.errors?.required">{{'label.generics.camposRequerido' | translate}}
+                    </div>
+                    <div *ngIf="genericControl.nombre.errors?.maxlength">{{'label.generics.maximo30' | translate}}</div>
                 </div>
             </div>
             <div class="item  item-2">
-                <label for="apellido">Apelllidos</label>
+                <label for="apellido">{{'label.generics.apellido' | translate}}</label>
                 <input name="apellido" formControlName="apellido" id="Lapellido" type="text"
                     placeholder="Ingrese Apellido" [class.is-invalid]="submit && genericControl.apellido.errors">
                 <div *ngIf="submit && genericControl.apellido.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.apellido.errors?.required">Apellido es requerido</div>
-                    <div *ngIf="genericControl.apellido.errors?.maxlength">Máximo 30 digitos</div>
+                    <div *ngIf="genericControl.apellido.errors?.required">{{'label.generics.camposRequerido' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.apellido.errors?.maxlength">{{'label.generics.maximo30' | translate}}
+                    </div>
                 </div>
             </div>
 
         </div>
         <div class="container">
             <div class="item  item-1">
-                <label for="pais">Pais</label>
+                <label for="pais">{{'label.generics.pais' | translate}}</label>
                 <select id="pais" name="pais" formControlName="pais" (change)="obtenerDepartamentos($event)"
                     [class.is-invalid]="submit && genericControl.pais.errors">
-                    <option value="" disabled selected>Seleccione</option>
+                    <option value="" disabled selected>{{'label.generics.seleccione' | translate}}</option>
                     <option value={{item.idPadre}} *ngFor="let item of this.listPaises">{{item.nombrePais}}</option>
                 </select>
                 <div *ngIf="submit && genericControl.pais.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.pais.errors?.required">Pais es requerido</div>
+                    <div *ngIf="genericControl.pais.errors?.required">{{'label.generics.camposRequerido' | translate}}
+                    </div>
                 </div>
             </div>
             <div class="item  item-2">
-                <label for="departamento">Departamento</label>
+                <label for="departamento">{{'label.generics.departamento' | translate}}</label>
                 <select id="departamento" name="departamento" formControlName="departamento"
                     [class.is-invalid]="submit && genericControl.departamento.errors">
-                    <option value="" disabled selected>Seleccione</option>
+                    <option value="" disabled selected>{{'label.generics.seleccione' | translate}}</option>
                     <option value={{item.idPadre}} *ngFor="let item of this.listDepartamentos">
                         {{item.nombreDepartamento}}</option>
                 </select>
                 <div *ngIf="submit && genericControl.departamento.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.departamento.errors?.required">Departamento es requerido</div>
+                    <div *ngIf="genericControl.departamento.errors?.required">{{'label.generics.camposRequerido' |
+                        translate}}</div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="item  item-1">
-                <label for="email">Email</label>
+                <label for="email">{{'label.generics.email' | translate}}</label>
                 <input name="email" formControlName="email" id="email" type="email" placeholder="Ingrese Email"
                     [class.is-invalid]="submit && genericControl.email.errors">
                 <div *ngIf="submit && genericControl.email.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.email.errors?.required">Email es requerido</div>
-                    <div *ngIf="genericControl.email.errors?.email">Email no es valido</div>
+                    <div *ngIf="genericControl.email.errors?.required">{{'label.generics.camposRequerido' | translate}}
+                    </div>
+                    <div *ngIf="genericControl.email.errors?.email">{{'label.generics.emailNoValido' | translate}}</div>
                 </div>
             </div>
             <div class="item  item-2">
-                <label for="telefono">Telefono</label>
+                <label for="telefono">{{'label.generics.telefono' | translate}}</label>
                 <input name="telefono" formControlName="telefono" id="telefono" type="text"
                     placeholder="Ingrese Telefono" [class.is-invalid]="submit && genericControl.telefono.errors">
                 <div *ngIf="submit && genericControl.telefono.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.telefono.errors?.required">Telefono es requerido</div>
-                    <div *ngIf="genericControl.telefono.errors?.pattern">Campo numérico</div>
-                    <div *ngIf="genericControl.telefono.errors?.maxlength">Máximo 10 dígitos</div>
+                    <div *ngIf="genericControl.telefono.errors?.required">{{'label.generics.camposRequerido' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.telefono.errors?.pattern">{{'label.generics.campoNumerico' | translate}}
+                    </div>
+                    <div *ngIf="genericControl.telefono.errors?.maxlength">{{'label.generics.maximo10' | translate}}
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="item  item-1">
-                <label for="contrasenia">Contraseña</label>
+                <label for="contrasenia">{{'label.generics.contrasenia' | translate}}</label>
                 <input name="contrasenia" formControlName="contrasenia" id="contrasenia" type="text"
                     placeholder="Ingrese Contraseña" (change)="validarContrasenia($event)"
                     [class.is-invalid]="submit && genericControl.contrasenia.errors">
                 <div *ngIf="submit && genericControl.contrasenia.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.contrasenia.errors?.required">Contraseña es requerido</div>
-                    <div *ngIf="genericControl.contrasenia.errors?.pattern">Campo alfanumérico</div>
-                    <div *ngIf="genericControl.contrasenia.errors?.minlength">Mínimo 6 dígitos</div>
+                    <div *ngIf="genericControl.contrasenia.errors?.required">{{'label.generics.camposRequerido' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.contrasenia.errors?.pattern">{{'label.generics.alfanumerico' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.contrasenia.errors?.minlength">{{'label.generics.minimo6' | translate}}
+                    </div>
                 </div>
             </div>
             <div class="item  item-2">
-                <label for="dobleContrasenia">Repita la contraseña</label>
+                <label for="dobleContrasenia">{{'label.generics.repitaContrasenia' | translate}}</label>
                 <input name="dobleContrasenia" formControlName="dobleContrasenia" id="dobleContrasenia" type="text"
                     placeholder="Ingrese Contraseña" (change)="validarContrasenia($event)"
                     [class.is-invalid]="submit && genericControl.dobleContrasenia.errors">
                 <div *ngIf="submit && genericControl.dobleContrasenia.errors" class="invalid-feedback">
-                    <div *ngIf="genericControl.dobleContrasenia.errors?.required">Contraseña es requerido</div>
-                    <div *ngIf="genericControl.dobleContrasenia.errors?.pattern">Campo alfanumérico</div>
-                    <div *ngIf="genericControl.dobleContrasenia.errors?.minlength">Mínimo 6 dígitos</div>
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.required">{{'label.generics.camposRequerido' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.pattern">{{'label.generics.alfanumerico' |
+                        translate}}</div>
+                    <div *ngIf="genericControl.dobleContrasenia.errors?.minlength">{{'label.generics.minimo6' |
+                        translate}}</div>
                 </div>
             </div>
         </div>
@@ -99,19 +114,19 @@
             <div class="item  item-1">
                 <label class="container">
                     <a [href]="this.ulrTerminos" target="_blank">
-                        <strong>Acepto Términos y Condiciones</strong>
+                        <strong>{{'label.generics.terminos' | translate}}</strong>
                     </a>
-                    <input type="checkbox" name="terminos" formControlName="terminos">
+                    <input type="checkbox" name="terminos" formControlName="terminos" (click)="validarTerminos($event)">
                 </label>
 
             </div>
         </div>
         <div class="container">
             <div class="item  item-button-2">
-                <button class="button-cancel button-cancel"><strong>Cancelar</strong></button>
+                <button class="button-cancel button-cancel"><strong>{{'label.generics.cancelar' | translate}}</strong></button>
             </div>
             <div class="item  item-button-1">
-                <button class="button-save" type="submit"><strong>Guardar</strong>
+                <button class="button-save" type="submit"><strong>{{'label.generics.guardar' | translate}}</strong>
                 </button>
             </div>
         </div>

@@ -14,7 +14,7 @@ export class GeneralService {
   }
 
   /**
-   *Obtiene la información de los paises con sus respectivos departamentos.
+   * Obtiene la información de los paises con sus respectivos departamentos.
    *
    * @return {*}
    * @memberof GeneralService
@@ -22,7 +22,25 @@ export class GeneralService {
   getInformation() {
     return of((data as any).default);
   }
+
+  /**
+   * Hace el llamado al servicio de Registro.
+   *
+   * @param {ObjectRecord} objectValue
+   * @return {*} 
+   * @memberof GeneralService
+   */
   saveRecord(objectValue: ObjectRecord) {
     return this.http.post(`${this.baseUrl}signup`, objectValue);
+  }
+
+  /**
+   * Obtiene la información del servicio de las listas.
+   *
+   * @return {*} 
+   * @memberof GeneralService
+   */
+  getInformationTechnologies() {
+    return this.http.get(`${this.baseUrl}techs`);
   }
 }

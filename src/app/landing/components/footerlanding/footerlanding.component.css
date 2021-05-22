@@ -9,13 +9,13 @@
   }
   .item {
     border-radius: .2em;
-    font-family: sans-serif;
+    
     padding: 2em 1em;
     color: white;
   }
   .item-1 {
     color: black;
-    font-family: sans-serif;
+    
     text-align: center;
     flex-shrink: 3;
     flex-grow: 5;

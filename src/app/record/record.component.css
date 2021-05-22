@@ -10,7 +10,7 @@
   }
   .item {
     border-radius: .2em;
-    font-family: sans-serif;
+    
     padding: 2em 1em;
     color: white;
     align-self: center;
@@ -18,12 +18,12 @@
   }
   .item-1 {
     color: black;
-    font-family: sans-serif;
+    
     flex-grow: 4;
 }
 .item-2 {
     color: black;
-    font-family: sans-serif;
+    
     flex-grow: 4;
 }
   input[type=text],[type=email], select {
@@ -42,7 +42,7 @@
 }
 .item-button-1 {
     color: black;
-    font-family: sans-serif;
+    
 }
 .button-cancel {
     background-color: transparent; 

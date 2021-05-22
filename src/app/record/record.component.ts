@@ -6,6 +6,7 @@ import { GenericMessage } from '../app-core/genericmessage';
 import { DefaultConfig } from '../utilities/defaultconfig';
 import { ObjectRecord } from './entities/record.object';
 import { PersistenceInfoService } from '../utilities/persistence/persistence-info.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-record',
@@ -24,7 +25,8 @@ export class RecordComponent implements OnInit {
     private readonly formBuilder: FormBuilder,
     private readonly generalService: GeneralService,
     private spinner: NgxSpinnerService,
-    private persistence: PersistenceInfoService
+    private persistence: PersistenceInfoService,
+    private router: Router
   ) {
     this.genericMessage = new GenericMessage();
     this.submit = false;
@@ -136,7 +138,7 @@ export class RecordComponent implements OnInit {
    * @memberof RecordComponent
    */
   guardar() {
-    if (this.recordForm.invalid) {
+    if (this.recordForm.invalid || this.submit === true) {
       this.submit = true;
     } else {
       this.spinner.show();
@@ -177,6 +179,7 @@ export class RecordComponent implements OnInit {
       'Creado'
     );
     this.recordForm.reset();
+    this.router.navigate(['/lists']);
   }
 
   /**
@@ -194,5 +197,22 @@ export class RecordComponent implements OnInit {
     record.mail = this.recordForm.controls.email.value;
     record.password = this.recordForm.controls.contrasenia.value;
     return record;
+  }
+
+  /**
+   * valida el campo de términos este checkeado.
+   *
+   * @param {*} event
+   * @memberof RecordComponent
+   */
+  validarTerminos(event) {
+    if (event.currentTarget.checked === false) {
+      this.submit = true;
+      let controlTerminos = this.recordForm.get('terminos');
+      controlTerminos.setValidators([Validators.required]);
+      controlTerminos.updateValueAndValidity();
+    } else {
+      this.submit = false;
+    }
   }
 }
