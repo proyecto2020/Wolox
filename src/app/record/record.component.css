@@ -2,12 +2,6 @@
     border-top: 4px solid #ff0037;
     
 }
-.images {
-  background-image: url('/assets/assets/Img Hero/Ic_ilustra_Hero.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .container {
     flex-direction: row;
     display: flex;
@@ -19,7 +13,7 @@
     padding: 2em 1em;
     color: white;
     align-self: center;
-    height: 48px;
+    height: 30px;
     width: 50px;
   }
   .item-1 {
