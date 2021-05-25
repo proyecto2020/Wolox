@@ -6,4 +6,8 @@ export class ListsObject {
   tech: string;
   type: string;
   year: string;
+  puntos: number;
+  constructor() {
+    this.puntos = 0;
+  }
 }

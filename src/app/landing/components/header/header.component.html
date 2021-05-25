@@ -14,7 +14,7 @@
     <div class="item item-4" #beneficios>
         <button *ngIf="!this.isLogged" class="button button" (click)="navigateToRecord()">{{'label.generics.login' |
             translate}}</button>
-        <button *ngIf="this.isLogged" class="button button" (click)="navigateToRecord()">{{'label.generics.listas' |
+        <button *ngIf="this.isLogged" class="button button" (click)="navigateToLists()">{{'label.generics.listas' |
             translate}}</button>
     </div>
 </div>

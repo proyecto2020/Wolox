@@ -178,13 +178,6 @@
   color: white;
   width: auto;
 }
-
-.images {
-  background-image: url("/assets/assets/Img Hero/Ic_ilustra_Hero.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .item-1 {
   color: black;
 }

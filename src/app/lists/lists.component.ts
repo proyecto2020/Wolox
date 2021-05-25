@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GeneralService } from '../app-core/core/services/general.service';
 import { PersistenceInfoService } from 'src/app/utilities/persistence/persistence-info.service';
 import { ListsObject } from './entities/lists.object';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-lists',
@@ -13,7 +14,8 @@ export class ListsComponent implements OnInit {
   filterTech: string = '';
   constructor(
     private generalService: GeneralService,
-    private readonly persistence: PersistenceInfoService
+    private readonly persistence: PersistenceInfoService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -48,11 +50,16 @@ export class ListsComponent implements OnInit {
    * @memberof ListsComponent
    */
   obtenerInformacionTecnologias() {
+    this.spinner.show();
     this.generalService
       .getInformationTechnologies()
       .subscribe((rs: Array<ListsObject>) => {
         this.lstTecnologias = rs;
-        console.log(this.lstTecnologias);
+        if (this.lstTecnologias) {
+          setTimeout(() => {
+            this.spinner.hide();
+          }, 5000);
+        }
       });
   }
 
@@ -63,9 +70,10 @@ export class ListsComponent implements OnInit {
    * @memberof ListsComponent
    */
   favorito(item) {
+    item.puntos = 1;
     const arrayTecnologiasFavoritas = this.obtenerTecnologiasFavoritas();
     if (arrayTecnologiasFavoritas.indexOf(item.tech) < 0) {
-      arrayTecnologiasFavoritas.push(item.tech);
+      arrayTecnologiasFavoritas.push(item);
       this.persistence.setInfo(
         'tecnologias',
         JSON.stringify(arrayTecnologiasFavoritas)
