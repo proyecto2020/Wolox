@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   navigateToRecord(): void {
     this.router.navigate(['/record']);
   }
-  navigateToLists() {
+  navigateToLists(): void {
     this.router.navigate(['/lists']);
   }
 }

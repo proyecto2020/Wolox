@@ -16,7 +16,7 @@ export class FooterlandingComponent implements OnInit {
   ngOnInit(): void { }
 
   /**
-   *Navega a la pagina de wolox.
+   * Navega a la pagina de wolox.
    *
    * @memberof FooterlandingComponent
    */

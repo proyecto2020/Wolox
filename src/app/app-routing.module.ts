@@ -22,7 +22,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: "",
+    path: '',
     component: LandingComponent,
     canActivate: [AuthGuardService],
   }

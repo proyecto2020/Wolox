@@ -11,12 +11,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class ListsComponent implements OnInit {
   lstTecnologias: Array<ListsObject>;
-  filterTech: string = '';
+  filterTech: string;
   constructor(
     public generalService: GeneralService,
     private readonly persistence: PersistenceInfoService,
     private spinner: NgxSpinnerService
-  ) {}
+  ) {
+    this.filterTech = '';
+  }
 
   ngOnInit(): void {
     this.obtenerInformacionTecnologias();
@@ -29,7 +31,7 @@ export class ListsComponent implements OnInit {
    * @return {*}
    * @memberof ListsComponent
    */
-  obtenerTecnologiasFavoritas() {
+  obtenerTecnologiasFavoritas(): string[] {
     let tecnoligasfavoritas = this.persistence.getInfo('tecnologias');
     if (
       tecnoligasfavoritas === null ||
@@ -49,7 +51,7 @@ export class ListsComponent implements OnInit {
    *
    * @memberof ListsComponent
    */
-  obtenerInformacionTecnologias() {
+  obtenerInformacionTecnologias(): void {
     this.spinner.show();
     this.generalService
       .getInformationTechnologies()
@@ -69,7 +71,7 @@ export class ListsComponent implements OnInit {
    * @param {*} item
    * @memberof ListsComponent
    */
-  favorito(item) {
+  favorito(item): any {
     item.puntos = 1;
     const arrayTecnologiasFavoritas = this.obtenerTecnologiasFavoritas();
     if (arrayTecnologiasFavoritas.indexOf(item.tech) < 0) {
@@ -86,7 +88,7 @@ export class ListsComponent implements OnInit {
    *
    * @memberof ListsComponent
    */
-  ordenarAscendente() {
+  ordenarAscendente(): void {
     this.lstTecnologias.sort((itemOne, itemTwo) =>
       itemOne.tech.localeCompare(itemTwo.tech)
     );
@@ -97,7 +99,7 @@ export class ListsComponent implements OnInit {
    *
    * @memberof ListsComponent
    */
-  ordenarDescendente() {
+  ordenarDescendente(): void {
     this.lstTecnologias.sort((temOne, itemTwo) =>
       itemTwo.tech.localeCompare(temOne.tech)
     );

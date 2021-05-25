@@ -42,11 +42,11 @@ export class RecordComponent implements OnInit {
   }
 
   /**
-   *Obtiene la información de los paises.
+   * Obtiene la información de los paises.
    *
    * @memberof RecordComponent
    */
-  obtenerInformacionPais() {
+  obtenerInformacionPais(): void {
     this.generalService.getInformation().subscribe((rs: any) => {
       this.listGeneralInformacion = rs;
       this.listPaises = this.listGeneralInformacion.Paises;
@@ -54,23 +54,23 @@ export class RecordComponent implements OnInit {
   }
 
   /**
-   *Filtra los departamentos.
+   * Filtra los departamentos.
    *
    * @param {*} event
    * @memberof RecordComponent
    */
-  obtenerDepartamentos(event) {
+  obtenerDepartamentos(event): void {
     this.listDepartamentos = this.listGeneralInformacion.Dapartamentos.filter(
       (x) => x.idPadre === Number(event.idPadre)
     );
   }
 
   /**
-   *Inica la instancia del formulario.
+   * Inica la instancia del formulario.
    *
    * @memberof RecordComponent
    */
-  inciarFormulario() {
+  inciarFormulario(): any {
     this.recordForm = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.maxLength(30)]],
       apellido: ['', [Validators.required, Validators.maxLength(30)]],
@@ -104,18 +104,18 @@ export class RecordComponent implements OnInit {
       terminos: ['', Validators.required],
     });
   }
-  get genericControl() {
+  get genericControl(): any {
     return this.recordForm.controls;
   }
 
   /**
-   *Validad la igualdad de la contraseña.
+   * Validad la igualdad de la contraseña.
    *
    * @param {*} event
    * @memberof RecordComponent
    */
-  validarContrasenia(event) {
-    let buttonSave = document.getElementById('save') as HTMLButtonElement;
+  validarContrasenia(event): void {
+    const buttonSave = document.getElementById('save') as HTMLButtonElement;
     if (
       this.recordForm.controls.contrasenia.value !== '' &&
       this.recordForm.controls.dobleContrasenia.value !== '' &&
@@ -139,16 +139,12 @@ export class RecordComponent implements OnInit {
   }
 
   /**
-   *crea el registro.
+   * crea el registro.
    *
    * @memberof RecordComponent
    */
-  guardar() {
-    if (
-      this.recordForm.invalid ||
-      this.submit === true ||
-      this.contraseniaDiferente == true
-    ) {
+  guardar(): void {
+    if (this.recordForm.invalid || this.submit === true) {
       this.submit = true;
     } else {
       this.spinner.show();
@@ -166,18 +162,18 @@ export class RecordComponent implements OnInit {
   }
 
   /**
-   *almacena la informacion incriptada en el sesion storage.
+   * almacena la informacion incriptada en el sesion storage.
    *
    * @param {*} item
    * @memberof RecordComponent
    */
-  almacenarInformacion(item) {
+  almacenarInformacion(item): any {
     this.persistence.setInfo('record', JSON.stringify(item));
     this.showMessage();
   }
 
   /**
-   *Renderiza el mensaje luego del cierre del spiner y limpia el formulario.
+   * Renderiza el mensaje luego del cierre del spiner y limpia el formulario.
    *
    * @memberof RecordComponent
    */
@@ -193,7 +189,7 @@ export class RecordComponent implements OnInit {
   }
 
   /**
-   *Prepara la información.
+   * Prepara la información.
    *
    * @return {*}  {ObjectRecord}
    * @memberof RecordComponent
@@ -215,17 +211,17 @@ export class RecordComponent implements OnInit {
    * @param {*} event
    * @memberof RecordComponent
    */
-  validarTerminos(event) {
+  validarTerminos(event): any {
     if (event.currentTarget.checked === false) {
       this.submit = true;
-      let controlTerminos = this.recordForm.get('terminos');
+      const controlTerminos = this.recordForm.get('terminos');
       controlTerminos.setValidators([Validators.required]);
       controlTerminos.updateValueAndValidity();
     } else {
       this.submit = false;
     }
   }
-  limpiar() {
+  limpiar(): void {
     this.recordForm.reset();
     this.ngOnInit();
   }

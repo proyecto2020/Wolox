@@ -16,7 +16,7 @@ export class WoloxersComponent implements OnInit {
   ngOnInit(): void {}
 
   /**
-   *Navega al Twitter de wolox.
+   * Navega al Twitter de wolox.
    *
    * @memberof WoloxersComponent
    */
