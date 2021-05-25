@@ -13,7 +13,7 @@ export class ListsComponent implements OnInit {
   lstTecnologias: Array<ListsObject>;
   filterTech: string = '';
   constructor(
-    private generalService: GeneralService,
+    public generalService: GeneralService,
     private readonly persistence: PersistenceInfoService,
     private spinner: NgxSpinnerService
   ) {}
