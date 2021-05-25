@@ -3,6 +3,7 @@ import { GeneralService } from '../app-core/core/services/general.service';
 import { PersistenceInfoService } from 'src/app/utilities/persistence/persistence-info.service';
 import { ListsObject } from './entities/lists.object';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lists',
@@ -15,7 +16,8 @@ export class ListsComponent implements OnInit {
   constructor(
     public generalService: GeneralService,
     private readonly persistence: PersistenceInfoService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private router: Router
   ) {
     this.filterTech = '';
   }
@@ -103,5 +105,14 @@ export class ListsComponent implements OnInit {
     this.lstTecnologias.sort((temOne, itemTwo) =>
       itemTwo.tech.localeCompare(temOne.tech)
     );
+  }
+
+  /**
+   * Navega a Landing
+   *
+   * @memberof ListsComponent
+   */
+  navegaLanding(): void {
+    this.router.navigate(['/landing']);
   }
 }

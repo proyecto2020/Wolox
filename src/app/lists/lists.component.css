@@ -232,3 +232,15 @@ input[type="text"] {
 .fa-star:hover {
   color: yellow;
 }
+.button-back {
+  background-color: transparent;
+  color: #de685e;
+  border-radius: 10px 10px 10px;
+  border: 1px solid #de685e;
+  width: 80px;
+  height: 40px;
+}
+.button-back:hover {
+  background-color: #de685e;
+  color: white;
+}
