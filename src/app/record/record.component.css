@@ -1,24 +1,36 @@
 .site-wrapper {
     border-top: 4px solid #ff0037;
+    
+}
+.images {
+  background-image: url('/assets/assets/Img Hero/Ic_ilustra_Hero.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .container {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: auto;
   }
   .item {
     border-radius: .2em;
     padding: 2em 1em;
     color: white;
     align-self: center;
-    height: 20px;
+    height: 48px;
     width: 50px;
   }
   .item-1 {
     color: black;
     flex-grow: 4;
+}
+h1 {
+  font-size: 60pt;
+  font-family: 'Luckiest Guy';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .item-2 {
     color: black;
@@ -68,36 +80,7 @@
   }
 
 
-h1 {
-  font-size: 50pt;
-  font-family: 'Luckiest Guy';
-  text-align: center;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow:   0px -6px 0 #212121,  
-                 0px -6px 0 #212121,
-                 0px  6px 0 #212121,
-                 0px  6px 0 #212121,
-                -6px  0px 0 #212121,  
-                 6px  0px 0 #212121,
-                -6px  0px 0 #212121,
-                 6px  0px 0 #212121,
-                -6px -6px 0 #212121,  
-                 6px -6px 0 #212121,
-                -6px  6px 0 #212121,
-                 6px  6px 0 #212121,
-                -6px  18px 0 #212121,
-                 0px  18px 0 #212121,
-                 6px  18px 0 #212121,
-                 0 19px 1px rgba(0,0,0,.1),
-                 0 0 6px rgba(0,0,0,.1),
-                 0 6px 3px rgba(0,0,0,.3),
-                 0 12px 6px rgba(0,0,0,.2),
-                 0 18px 18px rgba(0,0,0,.25),
-                 0 24px 24px rgba(0,0,0,.2),
-                 0 36px 36px rgba(0,0,0,.15);
-}
+
 .container-button {
     flex-direction: row;
     display: flex;

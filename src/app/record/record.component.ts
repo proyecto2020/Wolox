@@ -21,6 +21,7 @@ export class RecordComponent implements OnInit {
   listDepartamentos: Array<any>;
   submit: boolean;
   ulrTerminos: string;
+  contraseniaDiferente: boolean;
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly generalService: GeneralService,
@@ -32,6 +33,7 @@ export class RecordComponent implements OnInit {
     this.submit = false;
     this.ulrTerminos = DefaultConfig.DEFAULT_CONFIG_APP.DefaultUrlTerminos;
     this.listDepartamentos = [];
+    this.contraseniaDiferente = false;
   }
 
   ngOnInit(): void {
@@ -113,16 +115,19 @@ export class RecordComponent implements OnInit {
    * @memberof RecordComponent
    */
   validarContrasenia(event) {
+    let buttonSave = document.getElementById('save') as HTMLButtonElement;
     if (
       this.recordForm.controls.contrasenia.value !== '' &&
       this.recordForm.controls.dobleContrasenia.value !== '' &&
       this.recordForm.controls.contrasenia.valid &&
       this.recordForm.controls.dobleContrasenia.valid
     ) {
+      buttonSave.disabled = false;
       if (
         this.recordForm.controls.contrasenia.value !== event.target.value ||
         this.recordForm.controls.dobleContrasenia.value !== event.target.value
       ) {
+        buttonSave.disabled = true;
         this.genericMessage.showMessage(
           'error',
           DefaultConfig.DEFAULT_TEXT_APP.coincidenciaPassword,
@@ -139,7 +144,11 @@ export class RecordComponent implements OnInit {
    * @memberof RecordComponent
    */
   guardar() {
-    if (this.recordForm.invalid || this.submit === true) {
+    if (
+      this.recordForm.invalid ||
+      this.submit === true ||
+      this.contraseniaDiferente == true
+    ) {
       this.submit = true;
     } else {
       this.spinner.show();
@@ -215,5 +224,9 @@ export class RecordComponent implements OnInit {
     } else {
       this.submit = false;
     }
+  }
+  limpiar() {
+    this.recordForm.reset();
+    this.ngOnInit();
   }
 }

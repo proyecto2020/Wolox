@@ -1,18 +1,17 @@
 <div>
     <app-translate></app-translate>
-
 </div>
-<div class="container" id="nav">
+<div class="container" id="incio">
     <div class="item item-1">
         <img src="../assets/assets/logo_full_color.svg">
     </div>
     <div class="item item-2">
-        <strong><a href="#">{{'label.generics.incio' | translate}}</a></strong>
+        <strong><a href="#incio">{{'label.generics.incio' | translate}}</a></strong>
     </div>
     <div class="item item-3">
-        <strong><a href="#principio">{{'label.generics.beneficios' | translate}}</a></strong>
+        <strong><a href="#beneficios">{{'label.generics.beneficios' | translate}}</a></strong>
     </div>
-    <div class="item item-4">
+    <div class="item item-4" #beneficios>
         <button *ngIf="!this.isLogged" class="button button" (click)="navigateToRecord()">{{'label.generics.login' |
             translate}}</button>
         <button *ngIf="this.isLogged" class="button button" (click)="navigateToRecord()">{{'label.generics.listas' |

@@ -21,7 +21,11 @@ const routes: Routes = [
     component: ListsComponent,
     canActivate: [AuthGuardService]
   },
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
+  {
+    path: "",
+    component: LandingComponent,
+    canActivate: [AuthGuardService],
+  }
 ];
 
 @NgModule({

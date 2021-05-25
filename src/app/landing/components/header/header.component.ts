@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   _isLogged: boolean;
+  valor: string;
   get isLogged(): boolean {
     return this._isLogged;
   }
@@ -19,5 +20,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
   navigateToRecord(): void {
     this.router.navigate(['/record']);
+  }
+  navigateToList() {
+    this.router.navigate(['/list']);
   }
 }

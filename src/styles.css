@@ -7,6 +7,7 @@
 body {
     background-image: url('/assets/assets/Backgrounds/Bg_Header.png');
     background-repeat: no-repeat;
+    background-size: 100%;
     font-family: fira, 'Arial Narrow', Arial, sans-serif !important;
 }
 .invalid-feedback {
